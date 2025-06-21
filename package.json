@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "tsconfig-paths": "^4.2.0",
+    "@types/node": "^20.0.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}
