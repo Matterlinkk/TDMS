@@ -1,4 +1,4 @@
-import type { TemplateFields } from "@types/templateTypes";
+import type { TemplateFields } from '@models/templateTypes';
 
 interface Template {
     id: string;
@@ -6,7 +6,7 @@ interface Template {
     description?: string;
     createdAt: Date;
     lastUpdatedAt: Date;
-    tags: string[];
+    tags?: string[];
     fields: TemplateFields;
 }
 
