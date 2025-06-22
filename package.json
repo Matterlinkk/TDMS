@@ -1,12 +1,17 @@
 {
   "dependencies": {
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "tsconfig-paths": "^4.2.0",
-    "@types/node": "^20.0.0"
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.0.0",
+    "jest": "^30.0.2",
+    "ts-jest": "^29.4.0",
+    "tsconfig-paths": "^4.2.0"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest"
   }
 }

@@ -14,7 +14,7 @@
     "paths": {
       "@builders/*": ["./src/builders/*"],
       "@interfaces/*": ["./src/interfaces/*"],
-      "@types/*": ["./src/types/*"],
+      "@models/*": ["./src/models/*"],
       "@/*": ["./src/*"]
     },
     "typeRoots": ["node_modules/@types"],

@@ -1,5 +1,5 @@
 import { Template } from "@interfaces/template";
-import type { FieldType, TemplateFields, TypeMap, FieldDefinition } from "@types/templateTypes";
+import type { FieldType, TemplateFields, TypeMap, FieldDefinition } from "@models/templateTypes";
 
 class TemplateFieldsBuilder {
     private fields: TemplateFields = {}
@@ -46,10 +46,15 @@ class TemplateFieldsBuilder {
             throw new Error(`Field name must be a non-empty string\nInvalid string: ${name}`)
         }
 
+        if (name.length > 50) {
+            throw new Error(`"${name}" field's length more than 50 symbols`)
+        }
+
         if (this.fields[name]) {
             throw new Error(`The field with name "${name}" already exists`)
         }
 
+        // Needs to validate a data came from external resources and defining the field type as any
         if (definition.defaultValue !== undefined) {
             if (!this.isValidDefaultValue(definition.type, definition.defaultValue)) {
                 throw new Error(`Default value for field '${name}' doesn't match type '${definition.type}'`)
@@ -120,7 +125,7 @@ class TemplateFieldsBuilder {
         return this;
     }
 
-    validate(): string[] {
+    private validate(): string[] {
         const errors: string[] = [];
 
         if (Object.keys(this.fields).length === 0) {
